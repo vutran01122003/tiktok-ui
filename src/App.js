@@ -4,9 +4,7 @@ import './App.css';
 import Button from './component/Button';
 
 function App() {
-  return (
-   <Button />
-  );
+  return <Button />;
 }
 
 export default App;
