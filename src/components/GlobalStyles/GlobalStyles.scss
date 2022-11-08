@@ -1,0 +1,18 @@
+@import 'normalize.css';
+@import url('https://use.typekit.net/waz4tsx.css');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+    text-rendering: optimizeSpeed;
+    font-family: 'ibm-plex-sans', sans-serif;
+
+}
