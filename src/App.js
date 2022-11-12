@@ -1,24 +1,24 @@
+import { Home, Following } from './pages';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import routes, { publicRoutes } from './routes';
+import { LayoutDeafault, LayoutOnlyHeader } from './components/Layout';
 import { Fragment } from 'react';
-
-import { publicRoutes } from '~/routes';
-import { DefaultLayout } from '~/components/Layout';
 
 function App() {
     return (
-        <Router>
-            <div className="App">
+        <div>
+            <Router>
                 <Routes>
                     {publicRoutes.map((route, index) => {
-                        let Layout = DefaultLayout;
-
-                        if (route.layout) {
-                            Layout = route.layout;
-                        } else if (route.layout === null) {
-                            Layout = Fragment;
-                        }
-
                         const Page = route.component;
+                        let Layout = LayoutDeafault;
+
+                        // if (route.layout) {
+                        //     Layout = route.layout;
+                        // } else if (route.layout == null) {
+                        //     Layout = Fragment;
+                        // }
+
                         return (
                             <Route
                                 key={index}
@@ -32,8 +32,8 @@ function App() {
                         );
                     })}
                 </Routes>
-            </div>
-        </Router>
+            </Router>
+        </div>
     );
 }
 

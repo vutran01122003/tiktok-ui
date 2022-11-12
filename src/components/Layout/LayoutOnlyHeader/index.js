@@ -1,14 +1,12 @@
 import Header from '~/components/Layout/components/Header';
 
-function DefaultLayout({ children }) {
+function LayoutOnlyHeader({ children }) {
     return (
         <div className="app">
             <Header />
-            <div className="container">
-                <div className="content">{children}</div>
-            </div>
+            <div className="content">{children}</div>
         </div>
     );
 }
 
-export default DefaultLayout;
+export default LayoutOnlyHeader;

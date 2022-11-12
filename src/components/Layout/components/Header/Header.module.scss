@@ -1,0 +1,98 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: var(--default-layout-header-height, 60px);
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+}   
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: var(--default-layout-width, 1150px);
+    padding: 0 24px 0 20px;
+}
+
+.search {
+    --search-border-radius: 92px;
+    --search-height: 46px;
+    --search-button-width: 50px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(22, 24, 35, .06);
+    width: 360px;
+    height: var(--search-height);
+    padding: 0 0 0 16px;
+    border-radius: var(--search-border-radius);
+    border: 1.5px solid transparent;
+
+    .search-input {
+        height: 100%;
+        color: var(--black);
+        font-weight: 400;
+        font-size: 1.6rem;
+        background: transparent;
+        caret-color: var(--primary-color);
+        flex: 1;
+    }
+
+    .search-input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, .2);
+    }
+}
+
+.search-btn {
+    position: relative;
+    width: var(--search-button-width);
+    height: 100%;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 1.8rem;
+    color: #a2a2a7;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(22, 24, 35, .03);
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 35, .06);
+    }
+
+    &::after {
+        position: absolute;
+        background-color: rgba(22, 24, 35, .12);
+        content: "";
+        display: block;
+        height: 60%;
+        width: 1px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.clear-btn, .loading {
+    position: absolute;
+    color: rgba(22, 24, 35, 0.34);
+    font-size: 1.6rem;
+    right: calc(var(--search-button-width) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+}
+
+.loading {
+    display: none;
+}
+
+
+
